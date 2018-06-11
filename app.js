@@ -21,17 +21,12 @@ head.appendChild(block);
     td.setAttribute("style", 'border-right: 3px solid black;')
    }
    var value = Math.floor((Math.random() * 9) + 1);
-  //  if(i==2 &&j == 0){
-  //    markup = 1;
-  //  }
-  
    let input =  document.createElement('input');
    input.setAttribute('style','height:50.5px;width:50.5px')
    input.setAttribute('type','number');
    input.setAttribute('id',`${i}${j}`);
    input.setAttribute('class',`inputvalues`);
    input.setAttribute('disabled','');
-  //  input.setAttribute('onkeyup',`updatevaluecheck(${i},${j})`);
    input.setAttribute('value',`${markup}`);
    td.appendChild(input);
    let head = document.getElementById(`tr${i}`);
@@ -39,26 +34,16 @@ head.appendChild(block);
   }
 }
 
-// function results(){
-//   if(mainresults() == true){
-//     console.log("succces")
-//   }else{
-//     console.log("fail")
-//   }
-//   }
   function mainresults(){
    
     if(!emptyvalue()){
       return true;
     }
-    // console.log("data",row,col)
     for(var num = 1; num <=9; num++  ){
-      // console.log("value",row,col,num)
         if(insertvalue(row,col,num)){         
           document.getElementById(`${row}${col}`).value = num;         
           
           if(mainresults()){
-              //  console.log("SSSSSSSSSSSSSSSSSSSSSSSS")
                return true;
              }
              if(col >= 0){
@@ -68,7 +53,6 @@ head.appendChild(block);
               console.log("not able to", col)
               return true
             }  
-            //  console.log("recursive value",row,col,num)
                document.getElementById(`${row}${col}`).value = '';
             }
         }
@@ -82,7 +66,6 @@ for( row=0; row< 9;row++ ){
       document.getElementById(`${row}${col}`).setAttribute('disabled','')
         var data = document.getElementById(`${row}${col}`).value;
         if(data == ''){
-          // console.log("col and row to set",row,col);
          return true;
         }
     }
@@ -101,10 +84,8 @@ for(var col=0;col<9;col++){
   if(data == num){
    a=row;
    b=col;
-    // console.log("row inner true",row,col,num);
     return true;
   }
-  // console.log("row out flase",row,col,num);
 }
 return false;
 }
@@ -115,10 +96,9 @@ function valueincol(col,num){
     if(data == num){
       a=row;
       b = col;
-      // console.log("col inner true",row,col,num);
       return true
     }
-    // console.log("col out flase",row,col,num);
+    
   }
   return false;
   }
@@ -142,20 +122,18 @@ function updatevaluecheck() {
     for(var col=0; col<9;col++){
         var data = document.getElementById(`${row}${col}`).value;
         if(data == ''){
-			alert(`please fill (${row}${col})`)
-             console.log("please fill",row,col)
+			window.alert(`please fill (${row}${col})`)
              return;
           }
           if(row == 8 && col == 8){
             console.log("success")
             return;
          }
-         // console.log("please fill data",row,col,data)
         document.getElementById(`${row}${col}`).value='';
         if(insertvalue(row,col,data)){
           document.getElementById(`${row}${col}`).value=data;          
         }else{
-          alert(`please check  value on (${row}${col})`)
+          window.alert(`please check  value on (${row}${col})`)
           return;
         }
     }
