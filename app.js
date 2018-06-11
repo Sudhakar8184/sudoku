@@ -142,6 +142,7 @@ function updatevaluecheck() {
     for(var col=0; col<9;col++){
         var data = document.getElementById(`${row}${col}`).value;
         if(data == ''){
+			alert(`please fill (${row}${col})`)
              console.log("please fill",row,col)
              return;
           }
@@ -154,7 +155,7 @@ function updatevaluecheck() {
         if(insertvalue(row,col,data)){
           document.getElementById(`${row}${col}`).value=data;          
         }else{
-          console.log("fail in ",row,col)
+          alert(`please check  value on (${row}${col})`)
           return;
         }
     }
