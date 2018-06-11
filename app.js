@@ -122,7 +122,7 @@ function updatevaluecheck() {
     for(var col=0; col<9;col++){
         var data = document.getElementById(`${row}${col}`).value;
         if(data == ''){
-			window.alert(`please fill (${row}${col})`)
+			alert(`please fill (${row}${col})`)
              return;
           }
           if(row == 8 && col == 8){
@@ -133,7 +133,7 @@ function updatevaluecheck() {
         if(insertvalue(row,col,data)){
           document.getElementById(`${row}${col}`).value=data;          
         }else{
-          window.alert(`please check  value on (${row}${col})`)
+          alert(`please check  value on (${row}${col})`)
           return;
         }
     }
