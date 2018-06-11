@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <title>Sudoku game</title> -->
+	<style type="text/css">
+	td{
+		width: 60px;
+		height: 50px;
+		text-align: center;
+		font-size: 150%;
+	}
+	input{
+		text-align: center
+	}
+	</style>
+</head>
+<body onload="mainresults()">
+	<br><br><br> 
+	<!-- <center><h1>Sudoku</h1></center> -->
+	<!-- <button class= "btn-success" onclick="mainresults()">result</button> -->
+	<button class= "gametype btn-success" id="easy">easy</button>
+	<button class= "gametype btn-success" id="medium">medium</button>
+	<button class= "gametype btn-success" id="hard">hard</button>
+	<button class= "gametype btn-success" onclick="updatevaluecheck()">check</button>
+	<center>
+		<table border="3" style="width: 500px;height: 500px;">
+		<tbody id="tbody">
+		</tbody>
+	</table>
+
+<br><br>
+	
+</center>
+	
+</body>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+</html>
+
